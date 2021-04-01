@@ -7,4 +7,4 @@ WORKDIR /app
 
 COPY . .
 
-RUN go run app/mainflux-master\cmd\mqt
+RUN go run ./mainflux-master/cmd/mqtt/main.go
