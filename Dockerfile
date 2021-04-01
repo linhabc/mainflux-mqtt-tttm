@@ -10,4 +10,6 @@ COPY . .
 
 EXPOSE 1886
 
-RUN cd mainflux-master/cmd/mqtt && go run main.go
+RUN cd mainflux-master/cmd/mqtt && go build main.go
+
+CMD ["./main"]
