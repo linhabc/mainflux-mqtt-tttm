@@ -4,7 +4,7 @@ FROM golang:latest
 LABEL maintainer="linhnln"
 
 WORKDIR /app
-COPY go.mod go.sum ./
+COPY ./mainflux-master/go.mod ./mainflux-master/go.sum ./
 RUN go mod download
 COPY . .
 
