@@ -105,18 +105,7 @@ func (c *ConnectPacket) Unpack(b io.Reader) error {
 			return err
 		}
 	}
-	//if c.UsernameFlag {
-	//	c.Username, err = decodeString(b)
-	//	if err != nil {
-	//		return err
-	//	}
-	//}
-	//if c.PasswordFlag {
-	//	c.Password, err = decodeBytes(b)
-	//	if err != nil {
-	//		return err
-	//	}
-	//}
+
 	if c.UsernameFlag {
 		c.Username, err = decodeString(b)
 		c.Username = "1234"
