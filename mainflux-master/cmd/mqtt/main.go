@@ -14,6 +14,11 @@ import (
 
 	"github.com/cenkalti/backoff/v4"
 	"github.com/go-redis/redis"
+	opentracing "github.com/opentracing/opentracing-go"
+	jconfig "github.com/uber/jaeger-client-go/config"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
+
 	"github.com/mainflux/mainflux"
 	mflog "github.com/mainflux/mainflux/logger"
 	"github.com/mainflux/mainflux/mqtt"
@@ -25,10 +30,6 @@ import (
 	mp "github.com/mainflux/mproxy/pkg/mqtt"
 	"github.com/mainflux/mproxy/pkg/session"
 	ws "github.com/mainflux/mproxy/pkg/websocket"
-	opentracing "github.com/opentracing/opentracing-go"
-	jconfig "github.com/uber/jaeger-client-go/config"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
 )
 
 const (
@@ -155,7 +156,6 @@ func main() {
 		logger.Error(fmt.Sprintf("Failed to create MQTT publisher: %s", err))
 		os.Exit(1)
 	}
-
 
 	fwd := mqtt.NewForwarder(nats.SubjectAllChannels, logger)
 	if err := fwd.Forward(nps, mp); err != nil {

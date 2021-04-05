@@ -1,5 +1,5 @@
   
-FROM golang:latest
+FROM golang:alpine3.13
 
 LABEL maintainer="linhnln"
 
@@ -10,6 +10,6 @@ COPY . .
 
 EXPOSE 1886
 
-RUN cd mainflux-master/cmd/mqtt && go build main.go
+RUN cd mainflux-master/cmd/mqtt && go build main.go 
 
-CMD ["./main"]
+CMD [".mainflux-master/cmd/mqtt/main"]
