@@ -13,4 +13,4 @@ EXPOSE 8080
 
 RUN cd mainflux-master/cmd/mqtt && go build main.go 
 
-CMD [".mainflux-master/cmd/mqtt/main"]
+CMD ["./mainflux-master/cmd/mqtt/main"]
