@@ -216,8 +216,8 @@ var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err
 }
 
 func getclient() mqtt.Client {
-	var broker = BROKER_PORT
-	var port = BROKER_IP
+	var broker = BROKER_IP
+	var port = BROKER_PORT
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(fmt.Sprintf("tcp://%s:%d", broker, port))
 	opts.SetClientID("Mira_Manager_2")
