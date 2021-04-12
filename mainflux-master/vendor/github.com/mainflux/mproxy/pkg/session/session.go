@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"strconv"
 	"strings"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
@@ -14,6 +15,23 @@ import (
 	"github.com/mainflux/mainflux/pkg/errors"
 )
 
+// var (
+// 	USERNAME_VALUE = "abe21171-aea2-49ba-98b2-a520e2e62647"
+// 	PASSWORD_VALUE = "42d47493-13b7-4df1-9547-046b024cbbb2"
+
+// 	SENTINEL_ADDR_1 = "10.38.23.110:26379"
+// 	SENTINEL_ADDR_2 = "10.38.23.111:26379"
+// 	SENTINEL_ADDR_3 = "10.38.23.112:26379"
+
+// 	BROKER_PORT  = "10.38.23.111"
+// 	BROKER_IP, _ = strconv.Atoi("1883")
+
+// 	CLIENT_USERNAME = "2f732718-802b-4d46-97ba-2a47dce22fb5"
+// 	CLIENT_PASSWORD = "01eb9309-a9f0-1040-9681-fd79e5ecd395"
+
+// 	TOPIC_DEFAULT = "8ebc51a7-86c8-48b3-bee8-e89320323f19"
+// )
+
 var (
 	USERNAME_VALUE = os.Getenv("USERNAME_VALUE")
 	PASSWORD_VALUE = os.Getenv("PASSWORD_VALUE")
@@ -22,8 +40,8 @@ var (
 	SENTINEL_ADDR_2 = os.Getenv("SENTINEL_ADDR_2")
 	SENTINEL_ADDR_3 = os.Getenv("SENTINEL_ADDR_3")
 
-	BROKER_PORT = "10.38.23.111"
-	BROKER_IP   = 1883
+	BROKER_PORT  = os.Getenv("BROKER_PORT")
+	BROKER_IP, _ = strconv.Atoi("1883")
 
 	CLIENT_USERNAME = os.Getenv("CLIENT_USERNAME")
 	CLIENT_PASSWORD = os.Getenv("CLIENT_PASSWORD")
@@ -45,7 +63,6 @@ var (
 	errBroker = errors.New("failed proxying from MQTT client to MQTT broker")
 	errClient = errors.New("failed proxying from MQTT broker to MQTT client")
 )
-
 var a = getclient()
 var b = getclient2()
 
@@ -199,8 +216,8 @@ var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err
 }
 
 func getclient() mqtt.Client {
-	var broker = BROKER_IP
-	var port = BROKER_PORT
+	var broker = BROKER_PORT
+	var port = BROKER_IP
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(fmt.Sprintf("tcp://%s:%d", broker, port))
 	opts.SetClientID("Mira_Manager_2")
@@ -217,13 +234,13 @@ func getclient() mqtt.Client {
 }
 
 func getclient2() mqtt.Client {
-	var broker = BROKER_IP
-	var port = BROKER_PORT
+	var broker = BROKER_PORT
+	var port = BROKER_IP
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(fmt.Sprintf("tcp://%s:%d", broker, port))
 	opts.SetClientID("Mira_Manager_Refer")
-	opts.SetUsername(CLIENT_USERNAME)
-	opts.SetPassword(CLIENT_PASSWORD)
+	opts.SetUsername("2f732718-802b-4d46-97ba-2a47dce22fb5")
+	opts.SetPassword("01eb9309-a9f0-1040-9681-fd79e5ecd395")
 	opts.SetDefaultPublishHandler(messagePubHandler)
 	opts.OnConnect = connectHandler
 	opts.OnConnectionLost = connectLostHandler
@@ -250,7 +267,7 @@ func (s *Session) notify(pkt packets.ControlPacket, client mqtt.Client) {
 			publish_mirror(client, p.Payload, res1[1])
 			//publish_mirror(b,p.Payload,p.TopicName)
 		} else {
-			var topic_default = TOPIC_DEFAULT
+			var topic_default = "8ebc51a7-86c8-48b3-bee8-e89320323f19"
 			fmt.Println("hau3" + p.TopicName)
 			publish_mirror(a, p.Payload, "channels/"+topic_default+"/messages/"+p.TopicName)
 		}
