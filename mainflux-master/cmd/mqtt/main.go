@@ -32,9 +32,9 @@ import (
 )
 
 var (
-	defMQTTPort       = "1886"
-	defMQTTTargetHost = "10.38.23.111"
-	defNatsURL        = "nats://10.38.23.111:31422"
+	defMQTTPort       = os.Getenv("DEF_MQTT_PORT")
+	defMQTTTargetHost = os.Getenv("DEF_MQTT_TARGET_HOST")
+	defNatsURL        = os.Getenv("DEF_NATS_URL")
 )
 
 const (
