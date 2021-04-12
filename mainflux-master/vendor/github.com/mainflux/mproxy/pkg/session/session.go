@@ -24,7 +24,7 @@ var (
 	SENTINEL_ADDR_3 = os.Getenv("SENTINEL_ADDR_3")
 
 	BROKER_IP      = os.Getenv("BROKER_IP")
-	BROKER_PORT, _ = strconv.Atoi(os.Getenv("BROKER_IP"))
+	BROKER_PORT, _ = strconv.Atoi(os.Getenv("BROKER_PORT"))
 
 	CLIENT_USERNAME = os.Getenv("CLIENT_USERNAME")
 	CLIENT_PASSWORD = os.Getenv("CLIENT_PASSWORD")
