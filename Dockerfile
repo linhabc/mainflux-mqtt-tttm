@@ -6,7 +6,7 @@ LABEL maintainer="linhnln"
 # /mainflux-master/cmd/matt/main.go
 ENV DEF_MQTT_PORT = 1886
 ENV DEF_MQTT_TARGET_HOST = "10.38.23.111" 
-ENV DEF_NATS_URL = "nats:\/\/10.38.23.111:31422"
+ENV DEF_NATS_URL = "nats://10.38.23.111:31422"
 
 # /mainflux-mqtt-tttm/mainflux-master/vendor/github.com/mainflux/mproxy/pkg/session/session.go
 ENV USERNAME_VALUE = "abe21171-aea2-49ba-98b2-a520e2e62647"
