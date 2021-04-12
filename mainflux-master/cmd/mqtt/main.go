@@ -11,6 +11,7 @@ import (
 	"strconv"
 	"syscall"
 	"time"
+
 	"github.com/cenkalti/backoff/v4"
 	"github.com/go-redis/redis"
 	"github.com/mainflux/mainflux"
@@ -30,13 +31,17 @@ import (
 	"google.golang.org/grpc/credentials"
 )
 
+var (
+	defMQTTPort       = os.Getenv("DEF_MQTT_PORT")
+	defMQTTTargetHost = os.Getenv("DEF_MQTT_TARGET_HOST")
+	defNatsURL        = os.Getenv("DEF_NATS_URL")
+)
+
 const (
 	// Logging
 	defLogLevel = "error"
 	envLogLevel = "MF_MQTT_ADAPTER_LOG_LEVEL"
 	// MQTT
-	defMQTTPort              = "1886"
-	defMQTTTargetHost        = "10.38.23.111"
 	defMQTTTargetPort        = "1883"
 	defMQTTForwarderTimeout  = "30s" // 30 seconds
 	defMQTTTargetHealthCheck = ""
@@ -60,7 +65,6 @@ const (
 	envThingsAuthURL     = "MF_THINGS_AUTH_GRPC_URL"
 	envThingsAuthTimeout = "MF_THINGS_AUTH_GRPC_TIMEOUT"
 	// Nats
-	defNatsURL = "nats://10.38.23.111:31422"
 	envNatsURL = "MF_NATS_URL"
 	// Jaeger
 	defJaegerURL = ""
@@ -154,7 +158,6 @@ func main() {
 		logger.Error(fmt.Sprintf("Failed to create MQTT publisher: %s", err))
 		os.Exit(1)
 	}
-
 
 	fwd := mqtt.NewForwarder(nats.SubjectAllChannels, logger)
 	if err := fwd.Forward(nps, mp); err != nil {
