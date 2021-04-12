@@ -18,9 +18,9 @@ var (
 	USERNAME_VALUE = os.Getenv("USERNAME_VALUE")
 	PASSWORD_VALUE = os.Getenv("PASSWORD_VALUE")
 
-	SENTINEL_ADDR_1 = os.Getenv("SentinelAddrs_1")
-	SENTINEL_ADDR_2 = os.Getenv("SentinelAddrs_2")
-	SENTINEL_ADDR_3 = os.Getenv("SentinelAddrs_3")
+	SENTINEL_ADDR_1 = os.Getenv("SENTINEL_ADDR_1")
+	SENTINEL_ADDR_2 = os.Getenv("SENTINEL_ADDR_2")
+	SENTINEL_ADDR_3 = os.Getenv("SENTINEL_ADDR_3")
 
 	BROKER_PORT = os.Getenv("BROKER_PORT")
 	BROKER_IP   = os.Getenv("BROKER_IP")
