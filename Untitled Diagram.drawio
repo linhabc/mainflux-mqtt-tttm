@@ -1,1 +1,52 @@
-<mxfile host="app.diagrams.net" modified="2021-06-16T07:01:10.348Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" version="14.7.9" etag="WiFGgqgVgi4uk8vs3Wg2" type="github"><diagram id="NyYKmpiOJzQUzHHzIXd7">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-06-16T08:49:25.827Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="YbLithzDLA2-QajwAlb3" version="14.7.9" type="github">
+  <diagram id="NyYKmpiOJzQUzHHzIXd7" name="Page-1">
+    <mxGraphModel dx="1822" dy="796" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-7" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="jxNYNm2vqIWRhyHKEH82-1" target="jxNYNm2vqIWRhyHKEH82-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-1" value="Node Adapter" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-3" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="jxNYNm2vqIWRhyHKEH82-2" target="jxNYNm2vqIWRhyHKEH82-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-2" value="Client with username + clientId" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-5" value="Sub/pub topic: deviceA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="170" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-11" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="jxNYNm2vqIWRhyHKEH82-6" target="jxNYNm2vqIWRhyHKEH82-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-6" value="Client with ClientId and password" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="580" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-8" value="search db-&amp;gt; username +password&lt;br&gt;+ channel" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="130" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-9" value="create new Client" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="160" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-10" value="MQTT Adapter" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-12" value="Sub/pub topic: /channels/cd0d0307-9039-4a13-adb3-31d6d67a4787/messages" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="170" width="450" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-16" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="jxNYNm2vqIWRhyHKEH82-15" target="jxNYNm2vqIWRhyHKEH82-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-15" value="System" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1105" y="460" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jxNYNm2vqIWRhyHKEH82-21" value="Sub/pub topic: /channels/cd0d0307-9039-4a13-adb3-31d6d67a4787/messages" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="670" y="360" width="450" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
